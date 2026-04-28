@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicSense | Intelligent Public Service Decision System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">CS</span>
+        <div>
+          <strong>CivicSense</strong>
+          <span>Decision Assistant</span>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <a href="#overview" class="active">Overview</a>
+        <a href="#complaints">Complaints</a>
+        <a href="#planner">Resource Plan</a>
+        <a href="#new-complaint">New Case</a>
+      </nav>
+
+      <section class="theme-note">
+        <p>Theme fit</p>
+        <strong>Intelligent systems for real-world decision making</strong>
+        <span>Data analysis + automation for public service response teams.</span>
+      </section>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Public services dashboard</p>
+          <h1>Civic issue triage and resource planner</h1>
+        </div>
+        <div class="top-actions">
+          <button id="seedButton" class="icon-button" type="button" title="Load sample cases" aria-label="Load sample cases">
+            <span>↻</span>
+          </button>
+          <button id="autoPlanButton" class="primary-button" type="button">Generate Plan</button>
+        </div>
+      </header>
+
+      <section id="overview" class="metrics-grid" aria-label="Decision metrics">
+        <article class="metric">
+          <span>Total cases</span>
+          <strong id="totalCases">0</strong>
+        </article>
+        <article class="metric danger">
+          <span>Critical priority</span>
+          <strong id="criticalCases">0</strong>
+        </article>
+        <article class="metric warning">
+          <span>Average score</span>
+          <strong id="avgScore">0</strong>
+        </article>
+        <article class="metric success">
+          <span>Resolved today</span>
+          <strong id="resolvedCases">0</strong>
+        </article>
+      </section>
+
+      <section class="dashboard-grid">
+        <article class="panel wide">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">AI recommendation</p>
+              <h2>What should the city fix first?</h2>
+            </div>
+            <span id="decisionBadge" class="status-pill">Analyzing</span>
+          </div>
+          <div id="topDecision" class="decision-box"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Issue mix</p>
+              <h2>Category load</h2>
+            </div>
+          </div>
+          <div id="categoryChart" class="bar-chart"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Location intelligence</p>
+              <h2>Ward heat map</h2>
+            </div>
+          </div>
+          <div id="wardMap" class="ward-map" aria-label="Ward issue density"></div>
+        </article>
+      </section>
+
+      <section id="complaints" class="panel table-panel">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Prioritized queue</p>
+            <h2>Cases sorted by decision score</h2>
+          </div>
+          <div class="filters" aria-label="Filters">
+            <button class="filter active" data-filter="all" type="button">All</button>
+            <button class="filter" data-filter="critical" type="button">Critical</button>
+            <button class="filter" data-filter="water" type="button">Water</button>
+            <button class="filter" data-filter="safety" type="button">Safety</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Issue</th>
+                <th>Ward</th>
+                <th>Category</th>
+                <th>Score</th>
+                <th>Reason</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="caseTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="two-column">
+        <article id="planner" class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Automation</p>
+              <h2>Suggested response plan</h2>
+            </div>
+          </div>
+          <div id="resourcePlan" class="resource-plan"></div>
+        </article>
+
+        <article id="new-complaint" class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Citizen input</p>
+              <h2>Add a complaint</h2>
+            </div>
+          </div>
+          <form id="complaintForm" class="complaint-form">
+            <label>
+              Issue title
+              <input id="titleInput" name="title" type="text" placeholder="Example: water leaking near bus stand" required />
+            </label>
+            <label>
+              Description
+              <textarea id="descriptionInput" name="description" rows="4" placeholder="Describe the issue, impact, and nearby landmark" required></textarea>
+            </label>
+            <div class="form-grid">
+              <label>
+                Ward
+                <select id="wardInput" name="ward" required>
+                  <option value="North">North</option>
+                  <option value="South">South</option>
+                  <option value="East">East</option>
+                  <option value="West">West</option>
+                  <option value="Central">Central</option>
+                  <option value="Lake Zone">Lake Zone</option>
+                </select>
+              </label>
+              <label>
+                People affected
+                <input id="peopleInput" name="people" type="number" min="1" value="40" required />
+              </label>
+              <label>
+                Severity
+                <select id="severityInput" name="severity" required>
+                  <option value="2">Low</option>
+                  <option value="5" selected>Medium</option>
+                  <option value="8">High</option>
+                  <option value="10">Emergency</option>
+                </select>
+              </label>
+              <label>
+                Age in hours
+                <input id="ageInput" name="age" type="number" min="0" value="6" required />
+              </label>
+            </div>
+            <button class="primary-button full" type="submit">Classify and Prioritize</button>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
