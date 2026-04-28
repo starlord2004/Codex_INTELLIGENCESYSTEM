@@ -3,7 +3,6 @@
 ## Project Overview
 Healthcare management platform with Next.js 16, TypeScript, and Tailwind CSS.
 
-
 ## Completed Features (10 Phases)
 
 ### Phase 1-3: Foundation & UI
@@ -142,7 +141,7 @@ Healthcare management platform with Next.js 16, TypeScript, and Tailwind CSS.
 
 ---
 
-## 🧪 Testing Status
+## Testing Status
 
 ### Completed
 - Manual testing of all features
