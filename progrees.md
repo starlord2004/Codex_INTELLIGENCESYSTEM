@@ -1,5 +1,4 @@
 This document tracks the development progress of the ResQNet / MedResQ Healthcare Platform, a modern, AI-powered, full-stack web application designed for emergency response, healthcare access, and smart patient management.
-
 Timeline Progress
 Phase 1: Ideation & Planning
 Defined problem statement:
@@ -81,7 +80,6 @@ Goal
 Build a production-level, visually stunning, fully functional healthcare platform capable of:
 Real-world usage
 High scalability
-Winning hackathons / ideathons
 Notes
 Focus on performance + UI polish
 Add advanced animations for better presentation
