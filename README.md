@@ -1,94 +1,100 @@
-# CareVia - Healthcare Platform
+# CareVia - Healthcare Management Platform
 
-A modern healthcare platform built with Next.js 16, enabling users to find doctors, book appointments, order medicines, and schedule lab tests.
+A comprehensive healthcare platform built with Next.js 16, React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- **Doctor Discovery** - Browse doctors by specialty, view profiles, and check availability
-- **Appointment Booking** - Schedule appointments with preferred doctors and time slots
-- **Medicine Ordering** - Browse medicines, add to cart, and complete checkout with payment
-- **Lab Tests** - Book diagnostic tests and health checkups
-- **Surgery Information** - Explore affordable surgical procedures
-- **Hospital Directory** - Find hospitals and healthcare facilities
-- **Health Packages** - Discover comprehensive health checkup packages
+- **50+ Doctors** across 5 cities (Bangalore, Mumbai, Delhi, Hyderabad, Chennai)
+- **Doctor Booking**: Search, filter by specialty, and book clinic visits with time slots
+- **Medical History Dashboard**: Track appointments and manage prescriptions
+- **Prescription Management**: Upload/download/delete prescriptions (PDF, JPG, PNG)
+- **User Authentication**: Sign up, login, session management
+- **Health Packages**: Browse and book preventive health check-ups
+- **Medicines & Labs**: Order medicines and lab tests
+- **Transparent Pricing**: Service fees and tax breakdown
+- **Cash on Delivery Payment**: Only payment method supported
+- **Responsive Design**: Mobile-first, works on all devices
 
 ## Tech Stack
 
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **UI Components:** shadcn/ui with Radix UI primitives
-- **Icons:** Lucide React
-- **Forms:** React Hook Form with Zod validation
-- **Charts:** Recharts
-- **Theming:** next-themes (light/dark mode)
+- Next.js 16 with App Router
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui (60+ components)
+- React Context API
+- Lucide React icons
 
-## Getting Started
+## Quick Start
 
-### Prerequisites
+```bash
+# Install dependencies
+pnpm install
 
-- Node.js 18.17 or later
-- pnpm (recommended) or npm
+# Run development server
+pnpm dev
 
-### Installation
+# Build for production
+pnpm build
+pnpm start
+```
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/carevia.git
-   cd carevia
-   ```
-
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-
-3. Run the development server:
-   ```bash
-   pnpm dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Navigate to `http://localhost:3000`
 
 ## Project Structure
 
 ```
-├── app/
-│   ├── page.tsx                    # Homepage
-│   ├── appointment/                # Appointment management
-│   ├── doctors/                    # Doctor listing and profiles
-│   │   └── [doctorId]/
-│   │       ├── profile/            # Doctor profile page
-│   │       └── book/               # Booking flow
-│   │           └── success/        # Booking confirmation
-│   ├── hospitals/                  # Hospital details
-│   │   └── [hospitalId]/
-│   ├── lab-tests/                  # Lab test booking
-│   ├── medicines/                  # Medicine ordering
-│   │   ├── checkout/               # Cart checkout
-│   │   ├── payment/                # Payment processing
-│   │   └── order-confirmation/     # Order success
-│   └── surgeries/                  # Surgery information
-├── components/
-│   ├── carevia/                    # App-specific components
-│   │   ├── header.tsx
-│   │   ├── footer.tsx
-│   │   ├── search-bar.tsx
-│   │   ├── service-buttons.tsx
-│   │   ├── doctor-specialties.tsx
-│   │   ├── health-packages.tsx
-│   │   └── ...
-│   └── ui/                         # shadcn/ui components
-├── hooks/                          # Custom React hooks
-├── lib/                            # Utility functions
-└── styles/                         # Global styles
+/app              - Next.js pages (doctors, booking, dashboard, etc.)
+/components       - UI components and custom CareVia components
+/contexts         - User and location state management
+/lib              - Utilities
+/public           - Static assets
 ```
 
-## Scripts
+## Key Pages
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Build for production |
-| `pnpm start` | Start production server |
-| `pnpm lint` | Run ESLint |
+- `/` - Homepage with services and offers
+- `/doctors` - Doctor search and filtering
+- `/doctors/[doctorId]/profile` - Doctor profile
+- `/doctors/[doctorId]/book` - Booking appointment
+- `/dashboard` - User medical history (login required)
+- `/medicines` - Medicine shop
+- `/health-packages` - Health packages
+
+## Doctor Coverage
+
+- **Bangalore**: 20+ doctors (Indiranagar, Koramangala, HSR Layout, Whitefield, Jayanagar)
+- **Mumbai**: 5+ doctors (Andheri, Bandra)
+- **Delhi**: 4+ doctors (Saket, Connaught Place)
+- **Hyderabad**: 5+ doctors (HITEC City, Jubilee Hills)
+- **Chennai**: 4+ doctors (T. Nagar, Anna Nagar)
+
+## Getting Started
+
+1. Go to homepage
+2. Click "Find Doctors" or search by specialty
+3. Select city and area
+4. View doctor profiles with ratings
+5. Click "Book Clinic Visit"
+6. Choose time slot
+7. Confirm booking
+8. Pay via Cash on Delivery
+
+## User Dashboard
+
+- Sign up/login to create account
+- Click "My Account" in header
+- View appointment history (Upcoming, Completed, Cancelled)
+- Upload and manage prescriptions
+- Track medical records
+
+## Authentication
+
+Uses localStorage for session persistence. Sign up with email, phone, and password.
+
+## Installation
+
+```bash
+npm install -g pnpm
+pnpm install
+pnpm dev
+```
