@@ -1,217 +1,94 @@
-# CareVia — AI Hospital Intelligence Platform
+# CareVia - Healthcare Platform
 
-Powered by MedResQ Emergency System
+A modern healthcare platform built with Next.js 16, enabling users to find doctors, book appointments, order medicines, and schedule lab tests.
 
----
+## Features
 
-## Overview
-
-CareVia is an AI-powered hospital intelligence platform designed to help doctors, nurses, and hospital administrators make faster, safer, and smarter decisions during critical healthcare operations.
-
-Built under the theme:
-Intelligent Systems for Real-World Decision Making
-
-CareVia acts as an AI clinical co-pilot. It does not replace doctors but supports their decision-making using AI, machine learning, automation, and predictive analytics.
-
----
-
-## Problem Statement
-
-Hospitals operate in high-pressure environments where delays can directly affect patient survival.
-
-Common challenges include:
-
-* Emergency room overload
-* Delayed bed allocation
-* Medication interaction risks
-* Late ICU escalation
-* Poor ambulance coordination
-* Inefficient shift handovers
-
-Traditional systems focus on storing data.
-CareVia focuses on making decisions.
-
----
-
-## Solution
-
-CareVia provides a real-time intelligent healthcare system that:
-
-* Predicts risks before emergencies occur
-* Automates hospital workflows
-* Improves coordination across departments
-* Provides AI-driven recommendations
-
----
-
-## Core Features
-
-### Patient Triage
-
-Analyzes patient symptoms and vitals to classify risk levels as Critical, High, Medium, or Low, along with recommended actions.
-
-### Bed Allocation System
-
-Suggests optimal ward assignment such as ICU, General, Cardiology, Pediatrics, or Maternity with one-click allocation.
-
-### Medication Interaction Checker
-
-Identifies drug interactions, severity levels, and suggests safer alternatives.
-
-### ICU Early Warning System
-
-Monitors live vitals and detects Watch, Warning, or Critical conditions before escalation.
-
-### Appointment Optimizer
-
-Automatically reallocates cancelled appointments to suitable patients from the waitlist.
-
-### AI Hospital Advisor
-
-Provides intelligent responses to hospital-related queries such as ward load, patient risk, and operational status.
-
-### Admin Dashboard
-
-Displays real-time hospital insights including total patients, ICU occupancy, alerts, and ward load.
-
----
-
-## Advanced Features
-
-### Code Blue Prediction
-
-Predicts potential cardiac events before they occur based on patient vitals.
-
-### Ambulance Pre-Alert
-
-Prepares hospital resources before patient arrival including triage, bed reservation, and doctor notification.
-
-### Hospital Load Forecasting
-
-Predicts future hospital occupancy trends.
-
-### Symptom to Diagnosis Engine
-
-Provides top probable diagnoses with confidence scores and recommended tests.
-
-### Shift Handover Report Generator
-
-Automatically generates structured reports for doctor handovers.
-
----
-
-## MedResQ Integration
-
-* Emergency SOS system
-* Doctor consultation interface
-* Mental health support module
-* First aid guidance system
-* Hospital finder
-
----
+- **Doctor Discovery** - Browse doctors by specialty, view profiles, and check availability
+- **Appointment Booking** - Schedule appointments with preferred doctors and time slots
+- **Medicine Ordering** - Browse medicines, add to cart, and complete checkout with payment
+- **Lab Tests** - Book diagnostic tests and health checkups
+- **Surgery Information** - Explore affordable surgical procedures
+- **Hospital Directory** - Find hospitals and healthcare facilities
+- **Health Packages** - Discover comprehensive health checkup packages
 
 ## Tech Stack
 
-### Frontend
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **UI Components:** shadcn/ui with Radix UI primitives
+- **Icons:** Lucide React
+- **Forms:** React Hook Form with Zod validation
+- **Charts:** Recharts
+- **Theming:** next-themes (light/dark mode)
 
-React (Next.js or Vite)
-Tailwind CSS
-shadcn/ui
-Framer Motion
-Recharts
+## Getting Started
 
-### Backend (Optional)
+### Prerequisites
 
-Python (FastAPI or Flask)
-SQLite
+- Node.js 18.17 or later
+- pnpm (recommended) or npm
 
-### AI Layer
+### Installation
 
-Claude API (claude-sonnet-4-20250514)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/carevia.git
+   cd carevia
+   ```
 
----
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-## Emerging Technologies
+3. Run the development server:
+   ```bash
+   pnpm dev
+   ```
 
-* Artificial Intelligence and Machine Learning
-* IoT-based health monitoring simulation
-* Real-time data streaming
-* Location intelligence
-* Notification systems
-* Cloud-ready architecture
-* Progressive Web App design
-* Secure healthcare system design
-
----
-
-## UI/UX Highlights
-
-* Modern medical dashboard design
-* Dark theme interface
-* Glassmorphism styling
-* Fully responsive layout
-* Smooth animations and transitions
-* Interactive components
-
----
-
-## How to Run
-
-### Frontend
-
-npm install
-npm run dev
-
-### Backend (Optional)
-
-pip install fastapi uvicorn
-uvicorn app:app --reload
-
----
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
-/app
-/components
-/hooks
-/lib
-/public
-/styles
+```
+├── app/
+│   ├── page.tsx                    # Homepage
+│   ├── appointment/                # Appointment management
+│   ├── doctors/                    # Doctor listing and profiles
+│   │   └── [doctorId]/
+│   │       ├── profile/            # Doctor profile page
+│   │       └── book/               # Booking flow
+│   │           └── success/        # Booking confirmation
+│   ├── hospitals/                  # Hospital details
+│   │   └── [hospitalId]/
+│   ├── lab-tests/                  # Lab test booking
+│   ├── medicines/                  # Medicine ordering
+│   │   ├── checkout/               # Cart checkout
+│   │   ├── payment/                # Payment processing
+│   │   └── order-confirmation/     # Order success
+│   └── surgeries/                  # Surgery information
+├── components/
+│   ├── carevia/                    # App-specific components
+│   │   ├── header.tsx
+│   │   ├── footer.tsx
+│   │   ├── search-bar.tsx
+│   │   ├── service-buttons.tsx
+│   │   ├── doctor-specialties.tsx
+│   │   ├── health-packages.tsx
+│   │   └── ...
+│   └── ui/                         # shadcn/ui components
+├── hooks/                          # Custom React hooks
+├── lib/                            # Utility functions
+└── styles/                         # Global styles
+```
 
----
+## Scripts
 
-## Current Status
-
-UI and UX: Completed
-Frontend: Completed
-Backend: In progress
-AI Integration: Partial
-Deployment: Pending
-
----
-
-## Goal
-
-To build a production-level intelligent healthcare platform that improves hospital efficiency and supports life-saving decisions.
-
----
-
-## Future Enhancements
-
-* Real-time ambulance tracking
-* Multi-hospital coordination
-* Voice-enabled AI assistant
-* Advanced machine learning models
-* Offline-first capability
-
----
-
-## Author
-
-Sanketh R Bhat
-
----
-
-## Final Note
-
-CareVia is designed to demonstrate how intelligent systems can improve real-world healthcare decision-making and patient outcomes.
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development server |
+| `pnpm build` | Build for production |
+| `pnpm start` | Start production server |
+| `pnpm lint` | Run ESLint |
