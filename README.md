@@ -2,7 +2,7 @@
 
 A comprehensive healthcare management platform built with Next.js 16, TypeScript, and Tailwind CSS. CareVia enables users to book doctor appointments, order medicines, schedule lab tests, and manage their health records.
 
-**Website Link (Deployed)** : https://v0-symptom-checker-chi.vercel.app/symptom-checker
+**Website Link (Deployed)** : https://v0-symptom-checker-chi.vercel.app/
 ## Features
 
 ### Doctor Booking System
